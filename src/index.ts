@@ -1,11 +1,12 @@
-import Hi from "./lib";
-import {sum, adminName, register } from './lib';
+import express from 'express'
 
-Hi('นิลา')
-register();
- console.log(adminName);
+const app = express();
+const port:number = 3000;
 
- //บวกเลข 2โดยใช้ function SUM ในไฟล์ .lib/ts
- console.log(sum(10,20));
+app.get('/', function(request, response) {
+    response.send('hello')
+})
 
-console.log('Hello, TypeScript with Node.js!');
+app.listen(port, () =>{
+ console.log('http://localhost:' +port)
+})
